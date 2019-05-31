@@ -3,12 +3,15 @@
 </template>
 
 <style>
+body {
+  margin: 0;
+}
 html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
+* {
+  box-sizing: border-box;
 }
 </style>
 
