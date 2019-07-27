@@ -8,7 +8,6 @@ export default {
         }
     },
     mounted() {
-        console.log(d3)
         this.initSvg()
     },
 
@@ -34,13 +33,14 @@ export default {
                 })
             }
 
-
-
-
             this.svg.selectAll('circle')
                 .data(dataset)
                 .enter()
                 .append("circle")
+                // .style({
+                //     'stroke': 'gray',
+                //     'fill': 'white'
+                // })
                 .style("stroke", "gray")
                 .style("fill", "white")
                 .attr("r", 40)
@@ -51,6 +51,12 @@ export default {
                 .on("mousedown", animate);
 
             function animate() {
+                console.log(this)  //返回鼠标按下时的元素
+                console.log(d3.event)  //指当前所触发的mousedown事件产生的事件对象
+                console.log(d3.mouse(this))  //返回鼠标按下时相对于容器的偏移
+
+
+                // thi指当前鼠标按下时所在的元素
                 d3.select(this)
 
                     .transition()
